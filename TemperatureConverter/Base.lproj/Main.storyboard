@@ -15,23 +15,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="h3V-2T-nfc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celsius Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zs-P6-v6E">
                                 <rect key="frame" x="139" y="325.5" width="136" height="56"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2of-rH-EKX" userLabel="Temp Slider">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="asterisk.circle" catalog="system" maximumValueImage="asterisk.circle.fill" translatesAutoresizingMaskIntoConstraints="NO" id="2of-rH-EKX" userLabel="Temp Slider">
                                 <rect key="frame" x="93" y="433.5" width="228" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="Ma4-46-ec9"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="tempSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="v32-zd-PgU"/>
+                                    <action selector="sliderValueChanged:forEvent:" destination="BYZ-38-t0r" eventType="valueChanged" id="Gj8-q4-nc5"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35K-tJ-86u">
-                                <rect key="frame" x="68.5" y="186" width="277" height="34"/>
+                                <rect key="frame" x="68.5" y="238" width="277" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,25 +46,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.70906796927005256" blue="0.26679996931649141" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="35K-tJ-86u" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="04r-vp-iQX"/>
                             <constraint firstItem="nxS-bm-UhQ" firstAttribute="width" secondItem="6Zs-P6-v6E" secondAttribute="width" id="7NG-qp-rQ9"/>
                             <constraint firstItem="35K-tJ-86u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="98" id="9fX-fw-q7z"/>
                             <constraint firstItem="2of-rH-EKX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Chz-Of-0Ok"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nxS-bm-UhQ" secondAttribute="bottom" constant="278" id="CmU-1M-aRi"/>
+                            <constraint firstItem="h3V-2T-nfc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ESm-mw-a4X"/>
+                            <constraint firstItem="h3V-2T-nfc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fzk-0j-gCu"/>
                             <constraint firstItem="nxS-bm-UhQ" firstAttribute="top" secondItem="2of-rH-EKX" secondAttribute="bottom" constant="65.5" id="OGL-Xb-8xS"/>
                             <constraint firstItem="6Zs-P6-v6E" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Oyr-Ef-lk0"/>
+                            <constraint firstItem="h3V-2T-nfc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Wj4-s0-iK1"/>
+                            <constraint firstItem="h3V-2T-nfc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="bFj-da-gxE"/>
                             <constraint firstItem="2of-rH-EKX" firstAttribute="top" secondItem="6Zs-P6-v6E" secondAttribute="bottom" constant="52" id="bXh-ca-jFo"/>
+                            <constraint firstAttribute="bottom" secondItem="h3V-2T-nfc" secondAttribute="bottom" id="cyD-vk-OUx"/>
                             <constraint firstItem="nxS-bm-UhQ" firstAttribute="height" secondItem="6Zs-P6-v6E" secondAttribute="height" id="dQd-3C-K4Z"/>
                             <constraint firstItem="2of-rH-EKX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gmd-5u-UjT"/>
                             <constraint firstItem="nxS-bm-UhQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="i1g-DF-ZB0"/>
                             <constraint firstItem="6Zs-P6-v6E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="iWn-WN-8MN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="h3V-2T-nfc" secondAttribute="top" constant="140" id="kGc-fv-5Yc"/>
                             <constraint firstItem="2of-rH-EKX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="95" id="sT7-kH-0sv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GIT-vB-NWb"/>
+                    <navigationItem key="navigationItem" id="GIT-vB-NWb">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="folder" catalog="system" id="Z52-VE-AYf"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="celsiusLabel" destination="6Zs-P6-v6E" id="2BW-mr-KmK"/>
                         <outlet property="fahrenheitLabel" destination="nxS-bm-UhQ" id="QfZ-yJ-g1x"/>
@@ -78,8 +88,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X5S-Az-gZT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6cw-OY-1bc">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="6cw-OY-1bc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -92,4 +102,10 @@
             <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="asterisk.circle" catalog="system" width="64" height="60"/>
+        <image name="asterisk.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="folder" catalog="system" width="64" height="46"/>
+        <image name="sun" width="375" height="667"/>
+    </resources>
 </document>
