@@ -9,12 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var temperatureConverterLabel: UILabel!
+    @IBOutlet weak var celsiusLabel: UILabel!
+    @IBOutlet weak var tempSlider: UISlider!
+    @IBOutlet weak var fahrenheitLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func tempSlider(_ sender: Any) {
+    }
+    
 }
 
